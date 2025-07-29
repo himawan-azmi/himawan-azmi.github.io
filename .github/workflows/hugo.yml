@@ -31,7 +31,7 @@ jobs:
           extended: true
 
       - name: Build Hugo with PaperMod
-        run: hugo --minify --buildDrafts --buildFuture
+        run: hugo --minify --buildDrafts --buildFuture --cleanDestinationDir
 
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
