@@ -1,0 +1,4 @@
+baseURL = 'https://himawan-azmi.github.io/'
+languageCode = 'en-us'
+title = 'Himawan Az~'
+theme = 'PaperMod'
