@@ -4,4 +4,19 @@ title = 'Himawan Az~'
 theme = 'PaperMod'
 
 [params]
-  showPosts = true
+  env = "production"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  ShowAllPagesInArchive = true
+
+[params.homeInfoParams]
+  Title = "Selamat Datang di Blog Saya"
+  Content = "Tulisan-tulisan terbaru akan muncul di bawah."
+
+mainSections = ["posts"]  # <<< penting untuk menampilkan posts di homepage
