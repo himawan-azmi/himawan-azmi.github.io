@@ -14,9 +14,41 @@ theme = 'PaperMod'
   ShowWordCount = true
   ShowRssButtonInSectionTermList = true
   ShowAllPagesInArchive = true
+  disableThemeToggle = false  # false = tombol toggle aktif
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
 
 [params.homeInfoParams]
   Title = "Selamat Datang di Blog Saya"
   Content = "Tulisan-tulisan terbaru akan muncul di bawah."
 
+[params.assets]
+#  css = ["css/extended/custom.css"]
+#  css = ["css/extended/reading-mode.css"]
+  # Font dari Google Fonts
+  customCSS = ["https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap"]
+
 mainSections = ["posts"]  # <<< penting untuk menampilkan posts di homepage
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Beranda"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Postingan"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "about"
+    name = "Tentang Saya"
+    url = "/about/"
+    weight = 3
