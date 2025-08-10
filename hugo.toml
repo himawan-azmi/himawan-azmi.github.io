@@ -27,8 +27,8 @@ theme = 'PaperMod'
   Content = "Tulisan-tulisan terbaru akan muncul di bawah."
 
 [params.assets]
-#  css = ["css/extended/custom.css"]
-  css = ["css/extended/reading-mode.css"]
+  css = ["css/extended/custom.css"]
+#  css = ["css/extended/reading-mode.css"]
   # Font dari Google Fonts
   customCSS = ["https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap"]
 
