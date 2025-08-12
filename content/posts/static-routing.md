@@ -1,13 +1,13 @@
 +++
 date = '2025-08-06T22:16:23+07:00'
-draft = true
+draft = false
 title = 'Belajar Static Routing dengan Cisco Packet Tracer'
 showToc= true
 tocOpen= true
 tocTitle= "Daftar Isi"
 +++
 
-[!CAUTION]  
+> [!WARNING]  
 > Tulisan ini memuat materi yang tidak sepenuhnya berasal dari penulis sendiri, melainkan dirangkum dari berbagai sumber tepercaya dan dibantu oleh kecerdasan buatan. Seluruh referensi yang digunakan telah dicantumkan di bagian akhir, sehingga pembaca dapat dengan mudah menelusuri dan mempelajari sumber aslinya.
 
 ## Pengantar
@@ -19,22 +19,26 @@ Pada kesempatan kali ini, saya akan berbagi panduan bagaimana cara melakukan per
 
 ## Pendahuluan
 
-### Apa itu _Static Routing_ (Perutean Statis)
+### Apa itu _Static Routing_ (Perutean Statis) ?  
+
 _Static Routing_ merupakan metode perutean di mana jalur (_route_) dari suatu jaringan ke jaringan lain ditentukan dan dikonfigurasi secara manual oleh administrator jaringan, tanpa melibatkan protokol perutean dinamis.  
 Dalam _static routing_, informasi rute dimasukkan langsung ke _routing table_ oleh admin, dan rute tersebut tetap digunakan sampai diubah atau dihapus secara manual, meskipun kondisi jaringan berubah.  
 
 ### Karakteristik _Static Routing_  
+
 - Manual: Ditambahkan atau dihapus secara eksplisit oleh admin.  
 - Tidak adaptif: Tidak otomatis menyesuaikan jika terjadi perubahan topologi jaringan.  
 - Sederhana: Cocok untuk jaringan kecil dengan sedikit jalur.  
 - Prediktif: Jalur yang digunakan selalu sama, sehingga mudah dipantau.
 
 ### Kelebihan  
+
 - Lebih hemat _resource_ (CPU & memori) dibanding _dynamic routing_.  
 - Lebih aman karena tidak menerima update rute dari _router_ lain.  
 - Prediksi jalur lebih mudah.  
 
 ### Kekurangan  
+
 - Sulit dikelola di jaringan besar.  
 - Tidak otomatis mengalihkan rute jika jalur gagal (harus manual).
 
@@ -42,13 +46,14 @@ Dalam _static routing_, informasi rute dimasukkan langsung ke _routing table_ ol
 
 ## Praktik
 
-### Persiapan Alat dan Bahan
+### Persiapan Alat dan Bahan  
+
 Sebelum melakukan praktik, hal pertama yang perlu dilakukan adalah mempersiapkan alat dan bahan. Adapun alat dan bahan yang akan digunakan dalam praktik belajar perutean statis ini yaitu:
 1. Alat: 
     - Aplikasi ***Cisco Packet Tracer***
 2. Bahan:
-    - Topologi
-        [image]
+    - Topologi Jaringan  
+        ![Topologi jaringan](/assets/img/static-routing/topologi-static-routing_excalidraw.png)
 
     - Tabel Pengalamatan (_Addressing Table_)
 
@@ -58,14 +63,17 @@ Sebelum melakukan praktik, hal pertama yang perlu dilakukan adalah mempersiapkan
     |                 |     R1         |    Gig0/1   |  192.168.100.6   | 255.255.255.248 |     -         |
     |                 |     R2         |    Gig0/0   |  10.10.10.2      | 255.255.255.248 |     -         |
     |                 |     R2         |    Gig0/1   |  192.168.200.6   | 255.255.255.248 |     -         |
-    |    Switch       |     SW1        |    Fa0/0    |         -        |   N/A           |     -         |
-    |                 |     SW2        |    Fa0/1    |         -        |   N/A           |     -         |
-    |       PC        |     PC1        |    Gig/1    | 192.168.100.1    | 255.255.255.248 | 192.168.100.6 |
-    |                 |     PC2        |    Gig/1    | 192.168.200.1    | 255.255.255.248 | 192.168.200.6 |
+    |    Switch       |     SW1        |    Fa0/1    |       N/A        |   N/A           |     -         |
+    |                 |     SW1        |    Fa0/2    |       N/A        |   N/A           |     -         |
+    |                 |     SW2        |    Fa0/1    |       N/A        |   N/A           |     -         |
+    |                 |     SW2        |    Fa0/2    |       N/A        |   N/A           |     -         |
+    |       PC        |     PC1        |    Fa0      | 192.168.100.1    | 255.255.255.248 | 192.168.100.6 |
+    |                 |     PC2        |    Fa0      | 192.168.200.1    | 255.255.255.248 | 192.168.200.6 |
 
 ---    
 
-### Konfigurasi
+### Konfigurasi  
+
 Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangkat ***Router*** sampai dengan perangkat komputer (PC).
 1. **Router 1 (R1)**  
     **a. Masuk ke mode terminal perangkat atau IOS _Command Line Interface_(CLI).**  
@@ -180,31 +188,67 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
     ```
     R2# copy running-config startup-config
     ```
-3. **Personal Computer 1 (PC1)**  
+3. **Personal Computer (PC)**  
+    - _IP Configuration_ PC1  
+    ![IP Configuration PC1](/assets/img/static-routing/IP-Configuration_PC1.png)
+  
+    ---
+
+    - _IP Configuration_ PC2  
+    ![IP Configuration PC2](/assets/img/static-routing/IP-Configuration_PC2.png)
 
 ---
 
 ### Pengujian  
-1. Periksa konfigurasi perutean  
-    [image]
-2. Lakukan ***ping*** antar _router_  
-    [image]
-3. Lakukan ***ping*** antar PC  
-    [image]
-4. Dengan ***simple PDU***  
-    [image]
----
 
-## Penutup
+1. Periksa konfigurasi perutean dengan perintah `show ip route`  
+
+    ![Konfigurasi Perutean R1](/assets/img/static-routing/pengujian_show-ip-route_1.png)  
+
+    ---  
+
+    ![Konfigurasi Perutean R2](/assets/img/static-routing/pengujian_show-ip-route_2.png)
+
+2. Lakukan ***ping*** antar _router_ dengan perintah `ping`   
+
+    ![Ping R1toR2](/assets/img/static-routing/ping_R1-to-R2.png)  
+
+    ---
+
+    ![Ping R2 ke R1](/assets/img/static-routing/ping_R2-to-R1.png)
+
+3. Lakukan ***ping*** antar _Personal Computer_ dengan aplikasi _Command Prompt_ yang tersedia di _Desktop_  
+    ![Ping PC1 ke PC2](/assets/img/static-routing/ping_PC1-to-PC2.png)  
+
+    ---
+
+    ![Ping PC2toPC1](/assets/img/static-routing/ping_PC2-to-PC1.png)
+
+4. Dengan ***simple Protocol Data Unit (PDU)***  
+
+    ![Simple PDU](/assets/img/static-routing/simple-PDU.png)  
+
+> Catatan:  
+ Pengujian konektivitas dengan ***simple PDU*** untuk kali pertama, umumnya akan mengalami kegagalan dan membutuhkan beberapa kali percobaan. Hal tersebut disebabkan karena proses ***Address Resolution Protocol (ARP)***. Saat perangkat mengirim paket, perangkat tersebut perlu mengetahui alamat MAC tujuan. Jika alamat MAC belum ada di _cache_ ARP-nya, perangkat akan mengirimkan permintaan ARP (_broadcast_) untuk menemukannya. Proses ini dapat menyebabkan penundaan, yang menyebabkan paket awal kehabisan waktu dan dianggap gagal. Paket-paket selanjutnya biasanya berhasil karena alamat MAC kemudian disimpan di _cache_ ARP. Jika proses pengujian dilakukan dengan _ping_, biasanya akan diawali dengan hasil ***Request timed out.***.  
+
+ ---
+
+## Penutup  
+
+Setelah mempelajari konsep ***static routing*** dan langkah-langkah konfigurasinya melalui aplikasi simulasi ***Cisco Packet Tracer***, semoga tulisan ini dapat membantu teman-teman memahami jaringan komputer dengan lebih baik serta menumbuhkan semangat untuk terus belajar.  
+Terima kasih telah meluangkan waktu untuk membaca. Penulis memohon maaf apabila terdapat kesalahan atau kekurangan dalam penyampaian materi. Sampai bertemu di tulisan berikutnya. Salam hangat!
 
 ---
 
 ## Lampiran
 
+Jika ada dari teman-teman yang tertarik untuk mendapatkan file praktik ***.pkt*** (ekstensi ***Cisco Packet Tracer***) dari materi ini, dapat mengunduhnya pada tautan berikut:  
+[static-routing.pkt](files/static-routing.pkt)
 
 ---
 
 ## Referensi  
+
 1. Cisco Networking Academy: https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13788-3.html  
 2. RFC 1812 – Requirements for IP Version 4 Routers: https://www.rfc-editor.org/rfc/rfc1812  
 3. Tanenbaum, A. S., & Wetherall, D. J. (2011). _Computer Networks (5th ed.)_. Pearson.
