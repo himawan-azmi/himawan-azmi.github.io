@@ -191,11 +191,13 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
     ```
 3. **Personal Computer (PC)**  
     - _IP Configuration_ PC1  
+
     ![IP Configuration PC1](/img/static-routing/IP-Configuration_PC1.png)
   
     ---
 
     - _IP Configuration_ PC2  
+
     ![IP Configuration PC2](/img/static-routing/IP-Configuration_PC2.png)
 
 ---
@@ -219,6 +221,7 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
     ![Ping R2 ke R1](/img/static-routing/ping_R2-to-R1.png)
 
 3. Lakukan ***ping*** antar _Personal Computer_ dengan aplikasi _Command Prompt_ yang tersedia di _Desktop_  
+
     ![Ping PC1 ke PC2](/img/static-routing/ping_PC1-to-PC2.png)  
 
     ---
