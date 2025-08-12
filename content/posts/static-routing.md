@@ -7,8 +7,8 @@ tocOpen= true
 tocTitle= "Daftar Isi"
 +++
 
-> [!WARNING]  
-> Tulisan ini memuat materi yang tidak sepenuhnya berasal dari penulis sendiri, melainkan dirangkum dari berbagai sumber tepercaya dan dibantu oleh kecerdasan buatan. Seluruh referensi yang digunakan telah dicantumkan di bagian akhir, sehingga pembaca dapat dengan mudah menelusuri dan mempelajari sumber aslinya.
+> Disclaimer!  
+Tulisan ini memuat materi yang tidak sepenuhnya berasal dari penulis sendiri, melainkan dirangkum dari berbagai sumber tepercaya dan dibantu oleh kecerdasan buatan. Seluruh referensi yang digunakan telah dicantumkan di bagian akhir, sehingga pembaca dapat dengan mudah menelusuri dan mempelajari sumber aslinya.
 
 ## Pengantar
 
@@ -53,7 +53,8 @@ Sebelum melakukan praktik, hal pertama yang perlu dilakukan adalah mempersiapkan
     - Aplikasi ***Cisco Packet Tracer***
 2. Bahan:
     - Topologi Jaringan  
-        ![Topologi jaringan](/assets/img/static-routing/topologi-static-routing_excalidraw.png)
+    
+        ![Topologi jaringan](/static/img/static-routing/topologi-static-routing_excalidraw.png)
 
     - Tabel Pengalamatan (_Addressing Table_)
 
@@ -190,12 +191,12 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
     ```
 3. **Personal Computer (PC)**  
     - _IP Configuration_ PC1  
-    ![IP Configuration PC1](/assets/img/static-routing/IP-Configuration_PC1.png)
+    ![IP Configuration PC1](/static/img/static-routing/IP-Configuration_PC1.png)
   
     ---
 
     - _IP Configuration_ PC2  
-    ![IP Configuration PC2](/assets/img/static-routing/IP-Configuration_PC2.png)
+    ![IP Configuration PC2](/static/img/static-routing/IP-Configuration_PC2.png)
 
 ---
 
@@ -203,30 +204,30 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
 
 1. Periksa konfigurasi perutean dengan perintah `show ip route`  
 
-    ![Konfigurasi Perutean R1](/assets/img/static-routing/pengujian_show-ip-route_1.png)  
+    ![Konfigurasi Perutean R1](/static/img/static-routing/pengujian_show-ip-route_1.png)  
 
     ---  
 
-    ![Konfigurasi Perutean R2](/assets/img/static-routing/pengujian_show-ip-route_2.png)
+    ![Konfigurasi Perutean R2](/static/img/static-routing/pengujian_show-ip-route_2.png)
 
 2. Lakukan ***ping*** antar _router_ dengan perintah `ping`   
 
-    ![Ping R1toR2](/assets/img/static-routing/ping_R1-to-R2.png)  
+    ![Ping R1toR2](/static/img/static-routing/ping_R1-to-R2.png)  
 
     ---
 
-    ![Ping R2 ke R1](/assets/img/static-routing/ping_R2-to-R1.png)
+    ![Ping R2 ke R1](/static/img/static-routing/ping_R2-to-R1.png)
 
 3. Lakukan ***ping*** antar _Personal Computer_ dengan aplikasi _Command Prompt_ yang tersedia di _Desktop_  
-    ![Ping PC1 ke PC2](/assets/img/static-routing/ping_PC1-to-PC2.png)  
+    ![Ping PC1 ke PC2](/static/img/static-routing/ping_PC1-to-PC2.png)  
 
     ---
 
-    ![Ping PC2toPC1](/assets/img/static-routing/ping_PC2-to-PC1.png)
+    ![Ping PC2toPC1](/static/img/static-routing/ping_PC2-to-PC1.png)
 
 4. Dengan ***simple Protocol Data Unit (PDU)***  
 
-    ![Simple PDU](/assets/img/static-routing/simple-PDU.png)  
+    ![Simple PDU](/static/img/static-routing/simple-PDU.png)  
 
 > Catatan:  
  Pengujian konektivitas dengan ***simple PDU*** untuk kali pertama, umumnya akan mengalami kegagalan dan membutuhkan beberapa kali percobaan. Hal tersebut disebabkan karena proses ***Address Resolution Protocol (ARP)***. Saat perangkat mengirim paket, perangkat tersebut perlu mengetahui alamat MAC tujuan. Jika alamat MAC belum ada di _cache_ ARP-nya, perangkat akan mengirimkan permintaan ARP (_broadcast_) untuk menemukannya. Proses ini dapat menyebabkan penundaan, yang menyebabkan paket awal kehabisan waktu dan dianggap gagal. Paket-paket selanjutnya biasanya berhasil karena alamat MAC kemudian disimpan di _cache_ ARP. Jika proses pengujian dilakukan dengan _ping_, biasanya akan diawali dengan hasil ***Request timed out.***.  
@@ -243,7 +244,7 @@ Terima kasih telah meluangkan waktu untuk membaca. Penulis memohon maaf apabila 
 ## Lampiran
 
 Jika ada dari teman-teman yang tertarik untuk mendapatkan file praktik ***.pkt*** (ekstensi ***Cisco Packet Tracer***) dari materi ini, dapat mengunduhnya pada tautan berikut:  
-[static-routing.pkt](files/static-routing.pkt)
+[static-routing.pkt](/static/files/static-routing.pkt)
 
 ---
 
