@@ -99,18 +99,18 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
     **c. Konfigurasi alamat IP (IP _Address_) untuk _interface_ Gig0/0 seperti berikut:**  
     ```
     R1(config)# int gig0/0
-    R1(config)# description Connection to R2
-    R1(config)# ip address 10.10.10.1 255.255.255.248
-    R1(config)# no shutdown
-    R1(config)# exit
+    R1(config-if)# description Connection to R2
+    R1(config-if)# ip address 10.10.10.1 255.255.255.248
+    R1(config-if)# no shutdown
+    R1(config-if)# exit
     ```
     **d. Konfigurasi alamat IP (_IP Address_) untuk _interface_ Gig0/1 seperti berikut:**  
     ```
     R1(config)# int gig0/1
-    R1(config)# description Connection to PC2
-    R1(config)# ip address 192.168.100.6 255.255.255.248
-    R1(config)# no shutdown
-    R1(config)# exit
+    R1(config-if)# description Connection to PC2
+    R1(config-if)# ip address 192.168.100.6 255.255.255.248
+    R1(config-if)# no shutdown
+    R1(config-if)# exit
     ```
     **e. Konfigurasi alamat perutean (_routing address_)**  
         Untuk melakukan konfigurasi perutean, dapat dilakukan dengan dua cara yaitu _next-hop_ IP _address_ dan _exit-interface_.  
@@ -156,18 +156,18 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
     **c. Konfigurasi alamat IP (IP _Address_) untuk _interface_ Gig0/0 seperti berikut:**  
     ```
     R2(config)# int gig0/0
-    R2(config)# description Connection to R1
-    R2(config)# ip address 10.10.10.2 255.255.255.248
-    R2(config)# no shutdown
-    R2(config)# exit
+    R2(config-if)# description Connection to R1
+    R2(config-if)# ip address 10.10.10.2 255.255.255.248
+    R2(config-if)# no shutdown
+    R2(config-if)# exit
     ```
     **d. Konfigurasi alamat IP (_IP Address_) untuk _interface_ Gig0/1 seperti berikut:**  
     ```
     R2(config)# int gig0/1
-    R2(config)# description Connection to PC1
-    R2(config)# ip address 192.168.200.6 255.255.255.248
-    R2(config)# no shutdown
-    R2(config)# exit
+    R2(config-if)# description Connection to PC1
+    R2(config-if)# ip address 192.168.200.6 255.255.255.248
+    R2(config-if)# no shutdown
+    R2(config-if)# exit
     ```
     **e. Konfigurasi alamat perutean (_routing address_)**  
         Untuk melakukan konfigurasi perutean, dapat dilakukan dengan dua cara yaitu _next-hop_ IP _address_ dan _exit-interface_.  
