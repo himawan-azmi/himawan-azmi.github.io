@@ -82,35 +82,35 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
         Saat pertama kali melakukan konfigurasi perangkat _router_, nonaktifkan (_disable_) fitur ***Domain Lookup*** untuk mencegah pencarian DNS (_Domain Name System_) secara otomatis oleh _router_ ketika terjadi kesalahan penulisan perintah (_typo_) atau penulisan perintah yang tidak selesai.  
     **- Masuk ke _Privileged Mode_ dari _User Mode_ dengan perintah berikut:**  
     ```
-    Router> enable  
+    Router>enable  
     ```  
     **- Setelah masuk ke _Privileged Mode_, masuk ke _Global Configuration Mode_ dengan perintah berikut:**  
     ```
-    Router# config terminal
+    Router#config terminal
     ```  
     **- Mengubah nama host (_hostname_) dengan perintah berikut:**  
     ```
-    Router(config)# hostname R1
+    Router(config)#hostname R1
     ```  
     **- Nonaktifkan _domain-lookup_ dengan perintah berikut:**  
     ```
-    R1(config)# no ip domain-lookup
+    R1(config)#no ip domain-lookup
     ```  
     **c. Konfigurasi alamat IP (IP _Address_) untuk _interface_ Gig0/0 seperti berikut:**  
     ```
-    R1(config)# int gig0/0
-    R1(config-if)# description Connection to R2
-    R1(config-if)# ip address 10.10.10.1 255.255.255.248
-    R1(config-if)# no shutdown
-    R1(config-if)# exit
+    R1(config)#int gig0/0
+    R1(config-if)#description Connection to R2
+    R1(config-if)#ip address 10.10.10.1 255.255.255.248
+    R1(config-if)#no shutdown
+    R1(config-if)#exit
     ```
     **d. Konfigurasi alamat IP (_IP Address_) untuk _interface_ Gig0/1 seperti berikut:**  
     ```
-    R1(config)# int gig0/1
-    R1(config-if)# description Connection to PC2
-    R1(config-if)# ip address 192.168.100.6 255.255.255.248
-    R1(config-if)# no shutdown
-    R1(config-if)# exit
+    R1(config)#int gig0/1
+    R1(config-if)#description Connection to PC2
+    R1(config-if)#ip address 192.168.100.6 255.255.255.248
+    R1(config-if)#no shutdown
+    R1(config-if)#exit
     ```
     **e. Konfigurasi alamat perutean (_routing address_)**  
         Untuk melakukan konfigurasi perutean, dapat dilakukan dengan dua cara yaitu _next-hop_ IP _address_ dan _exit-interface_.  
@@ -119,19 +119,19 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
     ip route <network-destination> <subnet-mask network-destination> <next-hop ip address>
     ```  
     ```
-    R1(config)# ip route 192.168.200.0 255.255.255.248 10.10.10.2
+    R1(config)#ip route 192.168.200.0 255.255.255.248 10.10.10.2
     ```  
     **- _Exit-interface_**  
     ```
     ip route <network-destination> <subnet-mask network-destination> <exit-interface>
     ```  
     ```
-    R1(config)# ip route 192.168.200.0 255.255.255.248 gig0/1
+    R1(config)#ip route 192.168.200.0 255.255.255.248 gig0/1
     ```  
     **f. Simpan konfigurasi yang sedang berjalan**  
         Untuk menghindari hilangnya konfigurasi yang diterapkan saat ini, perlu untuk menyimpannya di memori. Perangkat yang dimuat ulang (_reboot_) akan menghapus konfigurasi yang tidak disimpan di memori. Konfigurasi yang tersimpan akan dimuat oleh perangkat ketika perangkat memulai sistem.  
     ```
-    R1# copy running-config startup-config
+    R1#copy running-config startup-config
     ```
 2. **Router 2 (R2)**  
     **a. Masuk ke mode terminal (CLI) perangkat.**  
@@ -139,35 +139,35 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
         Sama seperti langkah kedua konfigurasi ***Router 1*** sebelumnya yaitu menonaktifkan fitur _Domain Lookup_.  
     **- Masuk ke _Privileged Mode_ dari _User Mode_ dengan perintah berikut:**  
     ```
-    Router> enable
+    Router>enable
     ```  
     **- Setelah masuk ke _Privileged Mode_, masuk ke _Global Configuration Mode_ dengan perintah berikut:**  
     ```
-    Router# config terminal
+    Router#config terminal
     ```  
     **- Mengubah nama host (_hostname_) dengan perintah berikut:**  
     ```
-    Router(config)# hostname R2
+    Router(config)#hostname R2
     ```  
     **- Nonaktifkan _domain-lookup_ dengan perintah berikut:**  
     ```
-    R2(config)# no ip domain-lookup
+    R2(config)#no ip domain-lookup
     ```  
     **c. Konfigurasi alamat IP (IP _Address_) untuk _interface_ Gig0/0 seperti berikut:**  
     ```
-    R2(config)# int gig0/0
-    R2(config-if)# description Connection to R1
-    R2(config-if)# ip address 10.10.10.2 255.255.255.248
-    R2(config-if)# no shutdown
-    R2(config-if)# exit
+    R2(config)#int gig0/0
+    R2(config-if)#description Connection to R1
+    R2(config-if)#ip address 10.10.10.2 255.255.255.248
+    R2(config-if)#no shutdown
+    R2(config-if)#exit
     ```
     **d. Konfigurasi alamat IP (_IP Address_) untuk _interface_ Gig0/1 seperti berikut:**  
     ```
-    R2(config)# int gig0/1
-    R2(config-if)# description Connection to PC1
-    R2(config-if)# ip address 192.168.200.6 255.255.255.248
-    R2(config-if)# no shutdown
-    R2(config-if)# exit
+    R2(config)#int gig0/1
+    R2(config-if)#description Connection to PC1
+    R2(config-if)#ip address 192.168.200.6 255.255.255.248
+    R2(config-if)#no shutdown
+    R2(config-if)#exit
     ```
     **e. Konfigurasi alamat perutean (_routing address_)**  
         Untuk melakukan konfigurasi perutean, dapat dilakukan dengan dua cara yaitu _next-hop_ IP _address_ dan _exit-interface_.  
@@ -176,18 +176,18 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
     ip route <network-destination> <subnet-mask network-destination> <next-hop ip address>
     ```  
     ```
-    R2(config)# ip route 192.168.100.0 255.255.255.248 10.10.10.1
+    R2(config)#ip route 192.168.100.0 255.255.255.248 10.10.10.1
     ```  
     **- _Exit-interface_**  
     ```
     ip route <network-destination> <subnet-mask network-destination> <exit-interface>  
     ```
     ```
-    R2(config)# ip route 192.168.100.0 255.255.255.248 gig0/1
+    R2(config)#ip route 192.168.100.0 255.255.255.248 gig0/1
     ```  
     **f. Simpan konfigurasi yang berjalan saat ini**  
     ```
-    R2# copy running-config startup-config
+    R2#copy running-config startup-config
     ```
 3. **Personal Computer (PC)**  
     - _IP Configuration_ PC1  
@@ -214,7 +214,7 @@ Proses konfigurasi dilakukan secara bertahap satu per satu dimulai dari perangka
 
 2. Lakukan ***ping*** antar _router_ dengan perintah `ping`   
 
-    ![Ping R1toR2](/img/static-routing/ping_R1-to-R2.png)  
+    ![Ping R1 to R2](/img/static-routing/ping_R1-to-R2.png)  
 
     ---
 
@@ -247,7 +247,7 @@ Terima kasih telah meluangkan waktu untuk membaca. Penulis memohon maaf apabila 
 ## Lampiran
 
 Jika ada dari teman-teman yang tertarik untuk mendapatkan file praktik ***.pkt*** (ekstensi ***Cisco Packet Tracer***) dari materi ini, dapat mengunduhnya pada tautan berikut:  
-[static-routing.pkt](/files/static-routing.pkt)
+[static-routing.pkt](/files/static-routing/static-routing.pkt)
 
 ---
 
