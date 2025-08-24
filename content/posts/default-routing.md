@@ -192,12 +192,14 @@ Konfigurasi dilakukan secara bertahap mulai dari perangkat ***router*** sampai d
 
 Setelah mempelajari konsep ***default routing*** beserta langkah-langkah praktik konfigurasinya, semoga tulisan ini dapat membantu teman-teman dalam memahami jaringan komputer sekaligus menumbuhkan semangat untuk terus belajar.  
 Terima kasih telah berkenan membaca hingga akhir. Penulis memohon maaf apabila terdapat kekeliruan atau kekurangan dalam penyampaian materi. Sampai jumpa di tulisan berikutnya. Salam hangat!
+
 ---
 
 ## Lampiran
 
 Untuk teman-teman yang tertarik untuk mendapatkan file praktik dari materi ini dapat mengunduhnya pada tautan berikut:
 [default-routing.pkt](/files/default-routing/default-routing.pkt)
+
 ---
 
 ## Referensi
