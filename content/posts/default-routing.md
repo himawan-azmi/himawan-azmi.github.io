@@ -80,7 +80,7 @@ Alat dan bahan yang digunakan dalam praktik belajar perutean _default_ yaitu:
 Konfigurasi dilakukan secara bertahap mulai dari perangkat ***router*** sampai dengan ***personal computer***.
 1. **Router 1 (R1)**  
     **a. Masuk ke mode terminal IOS CLI (_Command Line Interface_)**  
-    **b. Nonaktifkan _Domain Lookup_**
+    **b. Nonaktifkan _Domain Lookup_**  
     **c. Konfigurasi _interface_ Gig0/0**
     ```
     R1(config)#int gig0/0
@@ -97,7 +97,7 @@ Konfigurasi dilakukan secara bertahap mulai dari perangkat ***router*** sampai d
     R1(config-if)#no shutdown
     R1(config-if)#exit
     ```  
-    **e. Konfigurasi alamat perutean (_routing address_)**
+    **e. Konfigurasi alamat perutean (_routing address_)**  
     _Default route_ menggunakan _network address destination_ statis 0.0.0.0 dan _subnet mask_ 0.0.0.0 yang dikenal sebagai ***"quad zero"***.  
     **- Dengan _next-hop ip address_**  
     ```
@@ -112,9 +112,9 @@ Konfigurasi dilakukan secara bertahap mulai dari perangkat ***router*** sampai d
     R1#copy run start
     ```
 2. **Router 2 (R2)**  
-    **a. Masuk ke mode terminal IOS CLI**
-    **b. Nonaktifkan _Domain Lookup_**
-    **c. Konfigurasi _interface Gig0/0_**
+    **a. Masuk ke mode terminal IOS CLI**  
+    **b. Nonaktifkan _Domain Lookup_**  
+    **c. Konfigurasi _interface Gig0/0_**  
     ```
     R2(config)#int gig0/0
     R2(config-if)#description Connection to R1
@@ -130,7 +130,7 @@ Konfigurasi dilakukan secara bertahap mulai dari perangkat ***router*** sampai d
     R2(config-if)#no shutdown
     R2(config-if)#exit
     ```
-    **e. Konfigurasi alamat perutean (_routing address_)**
+    **e. Konfigurasi alamat perutean (_routing address_)**  
     **- Dengan _next-hop ip address_**
     ```
     R2(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.1
